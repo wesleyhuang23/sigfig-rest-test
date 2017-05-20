@@ -1,0 +1,66 @@
+<section>
+	<div class="container-fluid">
+		<h1>SigFig RPT</h1>
+		<hr>
+		<!--panel the shows the list of all the companies-->
+		<div class="row col-lg-8">
+			<div class="panel panel-default">
+				<div class="panel-heading">Companies</div>
+				<div class="panel panel-default company" ng-repeat="company in companies" >
+					<div class="panel-heading header">{{company.name}} <a ui-sref="editCompany({id:'{{company._id}}'})"><span>edit</span></a></div>
+					<div class="content-wrapper {{company.name}}">
+						<label>Address: </label>
+							<p >{{company.address}}</p>
+						<label>Revenue: </label>
+							<p >{{company.revenue}}</p>
+						<label>Phone: </label>
+							<p >{{company.phone}}</p>
+						<label>Employees: </label>
+						<div class="employees" id="{{person._id}}" ng-repeat="person in company.people">
+							<label>Name:</label>
+							<p>{{person.name}}</p>
+							<label>Email:</label>
+							<p>{{person.email}}</p>
+							<div class="settings"><a ui-sref="editPerson({id: '{{person._id}}'})"><span>edit</span></a><span ng-click="deletePerson(person._id)">x</span></div>
+						</div>
+					</div>
+					<div class="panel-footer {{company.id}}" id="{{company.name}}" onclick="show(id)">Show people who work here</div>
+				</div>
+			</div>
+		</div>
+		<!--creating new company and person forms on the right hand side-->
+		<div class="row col-lg-4 input">
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Create New Company</div>
+				<label for="name">Name: </label>
+				<input class="form-control" name="name" type="text" ng-model="name"/>
+				<label for="address">Address: </label>
+				<input class="form-control" name="address" type="text" ng-model="address"/>
+				<label for="revenue">Revenue: </label>
+				<input class="form-control" name="revenue" type="text" ng-model="revenue"/>
+				<label for="address">Phone: </label>
+				<input class="form-control" name="phone" type="text" ng-model="phone"/>
+				<div class="btn btn-default" ng-click="createCompany(name, address, revenue, phone)">Save</div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">Create Person</div>
+				<label for="name">Name: </label>
+				<input class="form-control" name="name" type="text" ng-model="name"/>
+				<label for="address">Email: </label>
+				<input class="form-control" name="email" type="text" ng-model="email"/>
+				<br>
+				<label>Company: </label>
+				<div class="form-group">
+					<select class="form-control" name="companies" id="selection" ng-model="company">
+						<option ng-repeat="company in companies">{{company.name}}</option>
+					</select>
+				</div>
+				<div class="btn btn-default" ng-click="createPerson(name, email, company)">Save</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>

@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="row col-lg-12 edit-company">
+        <div class="panel panel-default">
+            <div class="panel-heading">Edit Company information</div>
+            <label for="name">Name: </label>
+            <input class="form-control" name="name" type="text" ng-model="name"/>
+            <label for="address">Address: </label>
+            <input class="form-control" name="address" type="text" ng-model="address"/>
+            <label for="revenue">Revenue: </label>
+            <input class="form-control" name="revenue" type="text" ng-model="revenue"/>
+            <label for="address">Phone: </label>
+            <input class="form-control" name="phone" type="text" ng-model="phone"/>
+            <a ui-sref="home"><div class="btn btn-default" ng-click="editCompany(name, address, revenue, phone)">Save</div></a>
+        </div>
+    </div>
+</div>

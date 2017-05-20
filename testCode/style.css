@@ -1,0 +1,100 @@
+/*general styling*/
+h1{
+    color: #147CBA;
+}
+.container-fluid{
+    width: 90%;
+}
+
+.input{
+    margin-left: 20px;
+}
+
+input{
+    margin: auto;
+    width: 90% !important;
+}
+
+select{
+    margin: auto;
+    width: 90% !important;
+}
+
+label{
+    padding: 10px;
+}
+
+.btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/*companies styling*/
+.company{
+    margin: 30px;
+}
+
+.company p{
+    margin-left: 10px;
+}
+.company label{
+    padding-bottom: 0px;
+}
+.content-wrapper{
+    height: 200px;
+    overflow: hidden;
+    transition: height ease-in-out 1s;
+}
+.panel-footer{
+    color: #147CBA;
+    cursor: pointer;
+}
+.panel-footer:hover{
+    text-decoration: underline;
+}
+
+.header{
+    font-size: 25px;
+    color: #147CBA !important;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header span{
+    font-size: 15px;
+}
+
+.employees{
+    display: flex;
+    position: relative;
+}
+.employees p{
+    margin-top: 10px;
+}
+
+.settings{
+    margin-top: 10px;
+    position: absolute;
+    right: 20px;
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settings span:hover{
+    text-decoration: underline;
+    color: #147CBA;
+    cursor: pointer;
+}
+
+/*styling for editing company information*/
+.edit-company{
+    margin-top: 110px;
+}
+
+/*showing employee id trigger*/
+#show.content-wrapper{
+    height: auto;
+    transition: all ease-in-out 1s;
+}
